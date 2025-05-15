@@ -41,6 +41,19 @@ The dataset used is the [Pima Indians Diabetes Dataset](https://www.kaggle.com/d
 
 ---
 
-## Project Structure
+## 📁 Project Structure
+
+- `data/diabetes.csv` — Dataset
+- `hive/` — Hive table + SQL queries
+- `pig/analysis.pig` — High-risk filter script
+- `spark/transform_and_predict.py` — Data cleaning + model
+- `notebooks/visualization.ipynb` — Graphs and charts
+- `models/logistic_regression.py` — ML code
+- `README.md` — Project overview
+- `insights.md` — Key findings
+- `recommendations.md` — Suggestions
+- `conclusion.md` — Final summary
+
+
 
 
