@@ -1,52 +1,63 @@
-# 📊 Key Insights from Diabetes Risk Analysis
+# Insights: Data Analysis and Modeling
 
-This document summarizes the main insights discovered through exploratory data analysis and visualization of the Pima Indians Diabetes dataset.
+## 1. Data Cleaning and Preparation
 
----
+The original dataset contains 768 records related to diabetes screening data. Several features including Glucose, BloodPressure, SkinThickness, Insulin, and BMI had invalid zero values, which were replaced with nulls. Rows with critical nulls were removed before training the model.
 
-## 1. BMI and Diabetes Risk
+* **Final usable dataset**: 392 rows
+* Features used: Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age
 
-- Diabetic individuals have significantly higher average BMI.
-- Average BMI (Outcome = 1): **35.14**
-- Average BMI (Outcome = 0): **30.30**
-- This indicates that obesity is a strong predictor of diabetes in this population.
+## 2. Outcome-Based Statistical Summary
 
----
+### Average by Outcome Group
 
-## 2. Age and Diabetes
+| Outcome         | Average Age | Average BMI |
+| --------------- | ----------- | ----------- |
+| 0 (No Diabetes) | 31.19       | 30.30       |
+| 1 (Diabetes)    | 37.07       | 35.14       |
 
-- Diabetic individuals are on average older.
-- Average Age (Outcome = 1): **37.07**
-- Average Age (Outcome = 0): **31.19**
-- Age is a clear risk factor for developing diabetes.
+* Diabetic individuals tend to be older and have higher BMI.
 
----
+## 3. Visual Analysis
 
-## 3. Glucose Levels
+* **Boxplot: Age vs Outcome**: Diabetics have wider age range and higher median age
+* **Boxplot: BMI vs Outcome**: Diabetics show higher BMI median and more extreme outliers
+* **Bar chart: Average Age & BMI**: Clear contrast between the two groups
+* **Correlation Matrix**: Age and Glucose show the strongest correlation with diabetes
+* **KDE Plot: Glucose**: Diabetics have glucose density curve shifted to higher values
+* **Age Group Distribution** (from Hive+Pig + Jupyter):
 
-- Glucose distribution shows a clear shift:
-  - Diabetic patients tend to have glucose levels significantly higher than non-diabetics.
-- KDE plots demonstrate this split clearly in the density curve.
+  * High-risk groups (Outcome = 1) concentrated in age 40–55
+  * Proportional plot confirms prevalence spikes above 40
 
----
+## 4. Predictive Modeling (PySpark)
 
-## 4. Feature Correlation
+* Model: Logistic Regression
+* Train/Test Split: 80% / 20% (335 / 57)
+* ROC-AUC Score: **0.8421**
 
-- Correlation matrix reveals:
-  - **Glucose** has the strongest positive correlation with diabetes outcome.
-  - **BMI** and **Age** are also strongly related.
-- These fields are most valuable in building predictive models.
+### Feature Coefficients
 
----
+| Feature                  | Coefficient | Impact                                       |
+| ------------------------ | ----------- | -------------------------------------------- |
+| Age                      | +1.1198     | Strong positive                              |
+| Glucose                  | +0.0876     | Moderate positive                            |
+| BloodPressure            | -0.0410     | Minor negative                               |
+| SkinThickness            | -0.0026     | Minimal impact                               |
+| Insulin                  | +0.0140     | Small positive                               |
+| BMI                      | -0.0012     | Unexpected negative (potential collinearity) |
+| DiabetesPedigreeFunction | -0.0834     | Slightly negative                            |
+| Pregnancies              | +0.0323     | Mild positive                                |
 
-## 5. Data Quality Issues
+## 5. Hive + Pig Summary Analysis
 
-- Several key medical fields (Glucose, Insulin, SkinThickness) contain 0s, which are biologically implausible.
-- These likely represent missing values and should be cleaned before modeling.
+* Used Pig script to filter diabetic cases and group by Age
+* Output saved as high\_risk\_summary.csv, visualized in notebook
+* Confirms middle-aged adults (30–55) dominate the high-risk segment
 
----
+## 6. Key Takeaways
 
-✅ These insights form the basis for:
-- Feature selection in machine learning
-- Health screening recommendations
-- Focused interventions on high-risk groups
+* Age and Glucose are the most important features for prediction
+* Diabetes risk increases sharply after age 40, especially 45–55
+* Visualization and modeling agree on central trends
+* The dataset, although slightly imbalanced, yields a robust model
