@@ -1,59 +1,78 @@
-# Diabetes Risk Analysis and Prediction Project
+# Diabetes Risk Analysis Project
 
-This project focuses on analyzing and predicting the risk of diabetes using health record data. The goal is to identify key factors that influence diabetes risk and provide data-driven recommendations for public health intervention.
+## Project Overview
 
----
+This project is submitted as **Assignment 1** for the course STQD6324 – Data Management (Semester 2, 2024/2025). It aims to demonstrate end-to-end data management and analytics skills using open-source tools and real-world data.
 
-## Dataset
-
-The dataset used is the [Pima Indians Diabetes Dataset](https://www.kaggle.com/datasets/mathchi/diabetes-data-set), which includes the following health attributes:
-
-- Pregnancies
-- Glucose
-- BloodPressure
-- SkinThickness
-- Insulin
-- BMI
-- DiabetesPedigreeFunction
-- Age
-- Outcome (0 = No diabetes, 1 = Has diabetes)
+The chosen domain is **healthcare**, with a focus on **diabetes risk analysis**. We use a public dataset from the UCI Machine Learning Repository and tools like Hive, Pig, PySpark, and Python visualizations to perform data cleaning, feature analysis, and predictive modeling.
 
 ---
 
-## Tools & Technologies Used
+## Objectives
 
-| Tool        | Purpose                              |
-|-------------|---------------------------------------|
-| **Hive**    | Data cleaning and SQL-based analysis |
-| **Pig**     | Advanced filtering & grouping         |
-| **Spark**   | Feature transformation & model building |
-| **Python (Colab)** | Data visualization & ML modeling |
-| **MySQL + Sqoop** | Exporting and storing results   |
+* Acquire and clean raw diabetes health records
+* Use Hive and Pig to explore high-risk group patterns
+* Build a predictive logistic regression model using PySpark
+* Visualize patterns across outcome, age, BMI, and other factors
+* Deliver insights, recommendations, and GitHub-based documentation
 
 ---
 
-## Project Highlights
+## Technologies Used
 
-- Analyzed average BMI and Age for diabetic vs non-diabetic patients
-- Visualized key health metrics distributions
-- Identified glucose and BMI as key predictors of diabetes
-- Built a logistic regression model to predict diabetes outcome
+* **Apache Hive** – SQL-like queries on structured HDFS data
+* **Apache Pig** – Script-based high-risk summarization
+* **PySpark MLlib** – Feature vectorization and logistic regression
+* **Pandas / Seaborn / Matplotlib** – Visualization and statistics
+* **GitHub** – Project versioning and public presentation
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
-- `data/diabetes.csv` — Dataset
-- `hive/` — Hive table + SQL queries
-- `pig/analysis.pig` — High-risk filter script
-- `spark/transform_and_predict.py` — Data cleaning + model
-- `notebooks/visualization.ipynb` — Graphs and charts
-- `models/logistic_regression.py` — ML code
-- `README.md` — Project overview
-- `insights.md` — Key findings
-- `recommendations.md` — Suggestions
-- `conclusion.md` — Final summary
+```
+diabetes-risk-analysis/
+├── data/                      # Source dataset (diabetes.csv)
+├── hive/                      # Hive create/query scripts
+├── pig/                       # Pig high-risk grouping scripts
+├── spark/                     # PySpark model pipeline
+├── notebooks/                 # Jupyter-based visualization
+├── images/                    # Chart outputs
+├── README.md                  # This file
+├── insights.md                # Data analysis & model explanation
+├── recommendations.md         # Health recommendations
+└── conclusion.md              # Summary & reflection
+```
 
+---
 
+## How to Run
 
+1. Clone this repository
+
+```bash
+git clone https://github.com/YourUsername/diabetes-risk-analysis.git
+```
+
+2. Upload `diabetes.csv` into HDFS under `/user/maria_dev/`
+
+3. Run the following files:
+
+* `hive/create_table.hql` and `hive/queries.hql` (on Ambari or Hive CLI)
+* `pig/analysis.pig` (on Ambari Pig UI)
+* `spark/transform_and_predict.py` (via PySpark or Jupyter)
+* `notebooks/visualization.ipynb` (for visualization output)
+
+4. All charts are saved under `/images/`, and insights are in Markdown
+
+---
+
+## Author
+
+**Zhang Zhuorui**
+STQD6324 – Assignment 1 – Semester 2 (2024/2025)
+Master of Science (Data Science and Analytics)
+UKM
+
+---
 
