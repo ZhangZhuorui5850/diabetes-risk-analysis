@@ -37,13 +37,14 @@ The original dataset contains 768 records related to diabetes screening data. Se
     * The greater number of extreme outliers: the presence of several individuals with BMIs above 50 and even close to 70 in the Outcome=1 group suggests that the prevalence of diabetes is significantly higher among the extremely obese.
   ![Average Age by Diabetes Outcome](https://github.com/user-attachments/assets/c4dfdf93-ab38-4456-bdbe-e259193b7dd7)
 * **Average BMl by Diabetes Outcome**: The mean BMI of patients with diabetes was nearly 5 units higher, supporting the strong association between obesity and diabetes.
-    * 未患糖尿病的人群（绿色柱）的平均 BMI 约为 31，接近肥胖界限（BMI ≥ 30）。
-    * 糖尿病患者（红色柱）平均 BMI 达到 35，明确处于肥胖区间。
+    * Age (0.24) has the greatest correlation with Outcome, meaning that the older you are, the more likely you are to get sick.
+    * SkinThickness (0.07) has the weakest relationship with diabetes and can be regarded as a secondary feature.
+    * Age, Pregnanceies, DiabetesPedigreeFunction are the three most relevant variables in the current chart and should be given priority during the modeling stage.
   ![Average BMl by Diabetes Outcome](https://github.com/user-attachments/assets/e6522a7c-0611-457c-acc4-a9e02d1189c1)
 * **Correlation Matrix**: revealed that Age and Glucose had the highest correlation with Outcome and were the key predictive features.
-    * Age（0.24）与 Outcome 的相关性最大，意味着年龄越大，越可能患病。
-    * SkinThickness（0.07） 与糖尿病的关系最弱，可视为较次要特征。
-    * Age、Pregnancies、DiabetesPedigreeFunction 是当前图表中与糖尿病最相关的3个变量，应在建模阶段给予优先考虑。
+    * Age (0.24) had the highest correlation with Outcome, implying that the older you are, the more likely you are to have the disease.
+    * SkinThickness (0.07) has the weakest correlation with Diabetes and can be considered a lesser characteristic.
+    * Age, Pregnancies, and DiabetesPedigreeFunction are the 3 most correlated variables with diabetes in the current chart and should be given priority in the modeling phase.
   ![Correlation Matrix](https://github.com/user-attachments/assets/e4acdd27-ff98-423a-8b06-5322b0505817)
 * **High-Risk Diabetes Cases by Age Group**: This graph shows the number of individuals at high risk of diabetes in each age group. Although there are more young people, it does not mean that the risk of disease is higher.
     * Objective: To demonstrate the number distribution of people classified as high risk of diabetes (Outcome=1) in different age groups.
