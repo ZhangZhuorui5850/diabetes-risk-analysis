@@ -1,10 +1,9 @@
 # Diabetes Risk Analysis Project
 
 ## Project Overview
+STQD6324 Assignment 1 
 
-This project is submitted as **Assignment 1** for the course STQD6324 – Data Management (Semester 2, 2024/2025). It aims to demonstrate end-to-end data management and analytics skills using open-source tools and real-world data.
-
-The chosen domain is **healthcare**, with a focus on **diabetes risk analysis**. We use a public dataset from the UCI Machine Learning Repository and tools like Hive, Pig, PySpark, and Python visualizations to perform data cleaning, feature analysis, and predictive modeling.
+The chosen domain is **healthcare**, with a focus on **diabetes risk analysis**. I use a public dataset from the UCI Machine Learning Repository and tools like Hive, Pig, PySpark, and Python visualizations to perform data cleaning, feature analysis, and predictive modeling.
 
 ---
 
@@ -14,17 +13,17 @@ The chosen domain is **healthcare**, with a focus on **diabetes risk analysis**.
 * Use Hive and Pig to explore high-risk group patterns
 * Build a predictive logistic regression model using PySpark
 * Visualize patterns across outcome, age, BMI, and other factors
-* Deliver insights, recommendations, and GitHub-based documentation
+* Deliver insights, recommendations documentation
 
 ---
 
 ## Technologies Used
 
-* **Apache Hive** – SQL-like queries on structured HDFS data
-* **Apache Pig** – Script-based high-risk summarization
-* **PySpark MLlib** – Feature vectorization and logistic regression
-* **Pandas / Seaborn / Matplotlib** – Visualization and statistics
-* **GitHub** – Project versioning and public presentation
+* **Apache Hive** 
+* **Apache Pig**
+* **PySpark MLlib** 
+* **Pandas / Seaborn / Matplotlib** 
+* **GitHub** 
 
 ---
 
@@ -61,7 +60,7 @@ git clone https://github.com/YourUsername/diabetes-risk-analysis.git
 * `hive/create_table.hql` and `hive/queries.hql` (on Ambari or Hive CLI)
 * `pig/analysis.pig` (on Ambari Pig UI)
 * `spark/transform_and_predict.py` (via PySpark or Jupyter)
-* `notebooks/visualization.ipynb` (for visualization output)
+* `notebooks/visualization.ipynb` and `notebooks/visualization2` (for visualization output)
 
 4. All charts are saved under `/images/`, and insights are in Markdown
 
@@ -71,8 +70,6 @@ git clone https://github.com/YourUsername/diabetes-risk-analysis.git
 
 **Zhang Zhuorui**
 **p147459**
-STQD6324 – Assignment 1 – Semester 2 (2024/2025)
-Master of Science (Data Science and Analytics)
 UKM
 
 ---
