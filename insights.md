@@ -21,14 +21,26 @@ The original dataset contains 768 records related to diabetes screening data. Se
 ## 3. Visual Analysis
 
 * **Boxplot: Age vs Outcome**: Diabetics have wider age range and higher median age
+  ![Age Distribution by Diabetes](https://github.com/user-attachments/assets/389fb7ea-0935-4ea6-b3dd-f61a1ad45f39)
 * **Boxplot: BMI vs Outcome**: Diabetics show higher BMI median and more extreme outliers
-* **Bar chart: Average Age & BMI**: Clear contrast between the two groups
-* **Correlation Matrix**: Age and Glucose show the strongest correlation with diabetes
-* **KDE Plot: Glucose**: Diabetics have glucose density curve shifted to higher values
-* **Age Group Distribution** (from Hive+Pig + Jupyter):
+  ![BMI Distribution by Diabetes Outcome](https://github.com/user-attachments/assets/06205c5e-b94d-432f-9e13-69cad20ed1d1)
+* **Average Age by Diabetes Outcome**: The average age of a person with diabetes is about 37 years, which is about 6 years higher than that of a person without the disease.
+  ![Average Age by Diabetes Outcome](https://github.com/user-attachments/assets/c4dfdf93-ab38-4456-bdbe-e259193b7dd7)
+* **Average BMl by Diabetes Outcome**: The mean BMI of patients with diabetes was nearly 5 units higher, supporting the strong association between obesity and diabetes.
+  ![Average BMl by Diabetes Outcome](https://github.com/user-attachments/assets/e6522a7c-0611-457c-acc4-a9e02d1189c1)
+* **Correlation Matrix**: revealed that Age and Glucose had the highest correlation with Outcome and were the key predictive features.
+  ![Correlation Matrix](https://github.com/user-attachments/assets/e4acdd27-ff98-423a-8b06-5322b0505817)
+* **High-Risk Diabetes Cases by Age Group**: This graph shows the number of individuals at high risk of diabetes in each age group. Although there are more young people, it does not mean that the risk of disease is higher.
+  ![high_risk_by_age_group](https://github.com/user-attachments/assets/e5af3961-6810-4077-b490-7a9b2258bd9a)
+* **Proportion of Diabetes Cases by Age Group**: Revealing the highest correlation between Age and Glucose and Outcome, it is the key predictive feature.
+  ![Proportion of Diabetes Cases by Age Group](https://github.com/user-attachments/assets/01eed642-5d76-45fe-a7a0-ce42507bd236)
+* **High BMI & Diabetic Patients by Age (Hive+Pig Output)** :
+  * Revealing the highest correlation between Age and Glucose and Outcome, it is the key predictive feature.
+  * There is still a large number of diabetics with high BMI around the age of 60, suggesting that diabetes risk continues to accumulate with age.
+ ![High BMI   Diabetic Patients by Age (Hive+Pig Output)](https://github.com/user-attachments/assets/1ec87dd8-893e-47b0-8bed-e38023a85ab9)
+* **Proportion of Obese Individuals Among Diabetics by Age**: There is still a large number of diabetics with high BMI around the age of 60, suggesting that diabetes risk continues to accumulate with age.
+  ![Proportion of Obese Individuals Among Diabetics by Age](https://github.com/user-attachments/assets/cade68da-6bb5-4af1-b405-8177653a5460)
 
-  * High-risk groups (Outcome = 1) concentrated in age 40–55
-  * Proportional plot confirms prevalence spikes above 40
 
 ## 4. Predictive Modeling (PySpark)
 
@@ -37,6 +49,7 @@ The original dataset contains 768 records related to diabetes screening data. Se
 * ROC-AUC Score: **0.8421**
 
 ### Feature Coefficients
+
 
 | Feature                  | Coefficient | Impact                                       |
 | ------------------------ | ----------- | -------------------------------------------- |
